@@ -8,12 +8,13 @@ a {
 }
 
 .header-wrapper {
-  background-color: aquamarine;
+  // background-color: aquamarine;
   height: 100px;
   width: 100%;
   padding: 0 24px;
+  border-bottom: 1px solid #e6e6e6;
   .header__main {
-    background-color: bisque;
+    // background-color: bisque;
     height: 50px;
     width: 100%;
     &--title {
@@ -23,7 +24,7 @@ a {
     }
   }
   .header__navi {
-    background-color: lightsteelblue;
+    // background-color: lightsteelblue;
     height: 50px;
     width: 100%;
     display: flex;
@@ -59,23 +60,23 @@ a {
 }
 
 .side-wrapper {
-  background-color: khaki;
+  // background-color: khaki;
   padding: 24px 16px 24px 0px;
   margin-right: 24px;
   width: 192px;
   .main-category__container {
-    background-color: lightcoral;
+    // background-color: lightcoral;
     .main-category__section {
-      background-color: lightgreen;
+      // background-color: lightgreen;
       .main-category__title {
-        background-color: mediumpurple;
+        // background-color: mediumpurple;
         padding: 8px 8px;
         color: #787c7b;
         .sub-category {
           margin-left: 20px;
           padding-bottom: 16px;
           &__title {
-            background-color: rgb(28, 126, 77);
+            // background-color: rgb(28, 126, 77);
             padding: 4px 16px;
             font-size: 14px;
             a {
@@ -89,25 +90,68 @@ a {
 }
 
 .main-wrapper {
-  background-color: orange;
+  // background-color: orange;
   width: calc(100vw - 192px);
   padding-top: 24px;
   .main-header {
-    background-color: orchid;
+    // background-color: orchid;
     height: 100px;
     width: 100%;
     margin-bottom: 24px;
     .breadcrumb {
       margin-bottom: 8px;
+      color: #787c7b;
     }
     .mani-category {
       font-size: 24px;
       font-weight: 700;
+      letter-spacing: .04em;
     }
   }
   .main-content {
-    background-color: palegoldenrod;
+    // background-color: palegoldenrod;
     height: calc(100vh - 148px);
     width: 100%;
+    .book-list {
+      // background-color: palegreen;
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          li {
+            // background-color: paleturquoise;
+            display: flex;
+            padding-bottom: 60px;
+            .book-img {
+              margin-right: 30px;
+              img {
+              height: 200px;
+              width: 150px;
+              object-fit: cover;
+              border-radius: 4px;
+              }
+            }
+            .book-description {
+              width: 320px;
+              margin-right: 80px;
+              &__title {
+                // background-color: palevioletred;
+                font-size: 20px;
+                font-weight: 700;
+                margin-bottom: 8px;
+              }
+              &__article {
+                // background-color: peru;
+                height: 120px;
+                font-size: 14px;
+                letter-spacing: .04em;
+                color: #787c7b;
+                word-break: break-all;
+                margin-bottom: 8px;
+              }
+            }
+          }
+        }
+    }
   }
 }
+
