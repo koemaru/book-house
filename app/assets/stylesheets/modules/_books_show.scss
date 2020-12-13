@@ -1,0 +1,62 @@
+.show-wrapper {
+  height: 100vh;
+  // background-color: beige;
+  .show-main {
+    width: 620px;
+    margin: 80px auto 0;
+    .book-info {
+      display: flex;
+      padding-bottom: 60px;
+      &__img {
+        img {
+          height: 270px;
+          width: 180px;
+          object-fit: cover;
+          border-radius: 4px;
+          margin-right: 80px;
+        }
+      }
+      &__detail {
+        // background-color: cadetblue;
+        width: 300px;
+        &--title {
+          font-size: 24px;
+          font-weight: 700;
+          padding: 20px 0;
+        }
+        &--poster {
+          font-size: 16px;
+        }
+        &--post-date {
+          font-size: 12px;
+          padding-bottom: 20px;
+        }
+        &--review {
+          font-size: 14px;
+          padding-bottom: 20px;
+        }
+        &--like {
+          font-size: 14px;
+        }
+      }
+    }
+    .post-info {
+      &__title {
+        // background-color: coral;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: .08em;
+        padding: 10px 0;
+      }
+      &__article {
+        // background-color: cornflowerblue;
+        font-size: 18px;
+        line-height: 60px;
+        letter-spacing: .08em;
+        color: #222;
+        padding-top: 40px;
+      }
+    }
+  }
+}
+  
