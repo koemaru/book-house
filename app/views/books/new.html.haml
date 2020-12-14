@@ -1,0 +1,31 @@
+.header-wrapper
+  = render "header"
+
+.new-wrapper
+  .new-main
+    = form_with model: @book, local: true do |f|
+      .book-container
+        .book-container__left
+          .book-container__left__upload
+            = image_tag '/assets/icon_camera.png', class: 'book-container__left__upload--icon'
+        .book-container__right
+          .book-container__right__title
+            = f.label :title, "タイトル", class: 'book-container__right__title--label'
+          .book-container__right__title
+            = f.text_field :title, placeholder: 'タイトル', class: 'book-container__right__title--input'
+          .book-container__right__category
+            = f.label :category, "カテゴリー", class: 'book-container__right__category--label'
+          .book-container__right__category
+            = f.text_field :category, placeholder: 'カテゴリー', class: 'book-container__right__category--input'
+          .book-container__right__category
+            = f.text_field :category, placeholder: 'カテゴリー', class: 'book-container__right__category--input'
+          .book-container__right__review
+            .book-container__right__review--title
+              = "評価"
+            .book-container__right__review--star
+              = "★ ★ ★ ★ ★"
+      .book-article
+        .book-article__title
+          = f.text_area :article, placeholder: '記事タイトル', class: 'book-article__title--input'
+        .book-article__content
+          = f.text_area :article, placeholder: 'こちらに読んだ本の内容や感想を記録しましょう', class: 'book-article__content--input'
