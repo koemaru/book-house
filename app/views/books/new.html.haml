@@ -5,9 +5,11 @@
   .new-main
     = form_with model: @book, local: true do |f|
       .book-container
-        .book-container__left
-          .book-container__left__upload
-            = image_tag '/assets/icon_camera.png', class: 'book-container__left__upload--icon'
+        = f.label :image, class: 'book-container__left' do
+          = image_tag '/assets/icon_camera.png', class: 'book-container__left__icon'
+          .book-container__left__comment
+            %pクリックして<br>ファイルをアップロード
+          = f.file_field :image, class: 'book-container__left__btn'
         .book-container__right
           .book-container__right__title
             = f.label :title, "タイトル", class: 'book-container__right__title--label'
@@ -29,3 +31,5 @@
           = f.text_area :article, placeholder: '記事タイトル', class: 'book-article__title--input'
         .book-article__content
           = f.text_area :article, placeholder: 'こちらに読んだ本の内容や感想を記録しましょう', class: 'book-article__content--input'
+      .book-register
+        = f.submit "投稿する", class: 'book-register__btn'
