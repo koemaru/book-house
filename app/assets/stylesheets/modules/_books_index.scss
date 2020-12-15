@@ -133,6 +133,7 @@ a {
             .book-description {
               width: 320px;
               margin-right: 80px;
+              position: relative;
               &__title {
                 // background-color: palevioletred;
                 font-size: 20px;
@@ -141,12 +142,20 @@ a {
               }
               &__article {
                 // background-color: peru;
-                height: 120px;
                 font-size: 14px;
                 letter-spacing: .04em;
                 color: #787c7b;
                 word-break: break-all;
                 margin-bottom: 8px;
+                text-align: justify;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 6;
+                overflow: hidden;
+              }
+              &__like {
+                position: absolute;
+                bottom: 0;
               }
             }
           }

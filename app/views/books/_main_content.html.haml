@@ -7,83 +7,15 @@
   .main-content
     .book-list
       %ul
-        %li
-          .book-img
-            = image_tag '/assets/book-3088775_1920.jpg'
-          .book-description
-            .book-description__title
-              = "鬼滅の刃"
-            .book-description__article
-              = "時は大正時代。炭を売る心優しき少年・炭治郎の日常は、家族を鬼に皆殺しにされたことで一変する。"
-            .book-description__like
-              = "like"
-        %li
-          .book-img
-            = image_tag '/assets/book-3088775_1920.jpg'
-          .book-description
-            .book-description__title
-              = "鬼滅の刃"
-            .book-description__article
-              = "時は大正時代。炭を売る心優しき少年・炭治郎の日常は、家族を鬼に皆殺しにされたことで一変する。"
-            .book-description__like
-              = "like"
-        %li
-          .book-img
-            = image_tag '/assets/book-3088775_1920.jpg'
-          .book-description
-            .book-description__title
-              = "鬼滅の刃"
-            .book-description__article
-              = "時は大正時代。炭を売る心優しき少年・炭治郎の日常は、家族を鬼に皆殺しにされたことで一変する。"
-            .book-description__like
-              = "like"
-        %li
-          .book-img
-            = image_tag '/assets/book-3088775_1920.jpg'
-          .book-description
-            .book-description__title
-              = "鬼滅の刃"
-            .book-description__article
-              = "時は大正時代。炭を売る心優しき少年・炭治郎の日常は、家族を鬼に皆殺しにされたことで一変する。"
-            .book-description__like
-              = "like"
-        %li
-          .book-img
-            = image_tag '/assets/book-3088775_1920.jpg'
-          .book-description
-            .book-description__title
-              = "鬼滅の刃"
-            .book-description__article
-              = "時は大正時代。炭を売る心優しき少年・炭治郎の日常は、家族を鬼に皆殺しにされたことで一変する。"
-            .book-description__like
-              = "like"
-        %li
-          .book-img
-            = image_tag '/assets/book-3088775_1920.jpg'
-          .book-description
-            .book-description__title
-              = "鬼滅の刃"
-            .book-description__article
-              = "時は大正時代。炭を売る心優しき少年・炭治郎の日常は、家族を鬼に皆殺しにされたことで一変する。"
-            .book-description__like
-              = "like"
-        %li
-          .book-img
-            = image_tag '/assets/book-3088775_1920.jpg'
-          .book-description
-            .book-description__title
-              = "鬼滅の刃"
-            .book-description__article
-              = "時は大正時代。炭を売る心優しき少年・炭治郎の日常は、家族を鬼に皆殺しにされたことで一変する。"
-            .book-description__like
-              = "like"
-        %li
-          .book-img
-            = image_tag '/assets/book-3088775_1920.jpg'
-          .book-description
-            .book-description__title
-              = "鬼滅の刃"
-            .book-description__article
-              = "時は大正時代。炭を売る心優しき少年・炭治郎の日常は、家族を鬼に皆殺しにされたことで一変する。"
-            .book-description__like
-              = "like"
+        - @new_books.each do |book|
+          = link_to book_path(book) do
+            %li
+              .book-img
+                = image_tag book.image.url
+              .book-description
+                .book-description__title
+                  = book.title
+                .book-description__article
+                  = book.article
+                .book-description__like
+                  = "♡ 28"
