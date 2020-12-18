@@ -6,9 +6,15 @@
     = form_with model: @book, local: true do |f|
       .book-container
         = f.label :image, class: 'book-container__left' do
-          = image_tag '/assets/icon_camera.png', class: 'book-container__left__icon'
-          .book-container__left__comment
-            %pクリックして<br>ファイルをアップロード
+          .prev-contents
+            - if @book.image.present?
+              .prev-content
+                = image_tag @book.image.url, alt: "preview", class: "prev-image"
+            - else
+              = image_tag '/assets/icon_camera.png', class: 'book-container__left__icon'
+              .book-container__left__comment
+                %pクリックして<br>
+                %pファイルをアップロード
           = f.file_field :image, class: 'book-container__left__btn'
         .book-container__right
           .book-container__right__title
