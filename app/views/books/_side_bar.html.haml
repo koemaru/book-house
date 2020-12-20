@@ -1,8 +1,9 @@
 .side-wrapper
   .main-category__container
     .main-category__section
-      .main-category__title
-        = "> 仕事"
+      .main-category__title.js-accordion-title
+        %p 仕事
+      .js-accordion-content
         .sub-category
           .sub-category__title
             = link_to "IT"
@@ -10,8 +11,9 @@
             = link_to "金融"
           .sub-category__title
             = link_to "自己啓発"
-      .main-category__title
-        = "> 趣味"
+      .main-category__title.js-accordion-title
+        %p 趣味
+      .js-accordion-content
         .sub-category
           .sub-category__title
             = link_to "スポーツ"
@@ -19,8 +21,9 @@
             = link_to "釣り"
           .sub-category__title
             = link_to "キャンプ"
-      .main-category__title
-        = "> くらし"
+      .main-category__title.js-accordion-title
+        %p くらし
+      .js-accordion-content
         .sub-category
           .sub-category__title
             = link_to "家計"
@@ -28,8 +31,9 @@
             = link_to "日用品"
           .sub-category__title
             = link_to "雑貨"
-      .main-category__title
-        = "> 小説"
+      .main-category__title.js-accordion-title
+        %p 小説
+      .js-accordion-content
         .sub-category
           .sub-category__title
             = link_to "文学"
