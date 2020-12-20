@@ -67,11 +67,35 @@ a {
   .main-category__container {
     // background-color: lightcoral;
     .main-category__section {
+      // position: relative;
       // background-color: lightgreen;
       .main-category__title {
         // background-color: mediumpurple;
         padding: 8px 8px;
         color: #787c7b;
+        position: relative;
+        p {
+          margin-left: 30px;
+        }
+      }
+      .main-category__title::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 38%;
+        border-top: 3px solid #787c7b;
+        border-right: 3px solid #787c7b;
+        width: 8px;
+        height: 8px;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+      }
+      .main-category__title.open::before {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 38%;
+      }
+      .js-accordion-content {
         .sub-category {
           margin-left: 20px;
           padding-bottom: 16px;
