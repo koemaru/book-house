@@ -23,10 +23,9 @@
             = f.text_field :title, placeholder: 'タイトル', class: 'book-container__right__title--input'
           .book-container__right__category
             = f.label :category, "カテゴリー", class: 'book-container__right__category--label'
-          .book-container__right__category
-            = f.text_field :category, placeholder: 'カテゴリー', class: 'book-container__right__category--input'
-          .book-container__right__category
-            = f.text_field :category, placeholder: 'カテゴリー', class: 'book-container__right__category--input'
+          -# .book-container__right__category--form
+          .book-container__right__category.js-category-form
+            = f.collection_select :category_id, Category.roots, :id, :name, {prompt: '選択してください'}, {class: 'book-container__right__category--input', id: 'parent-category'}
           .book-container__right__review
             .book-container__right__review--title
               = "評価"
