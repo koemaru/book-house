@@ -91,15 +91,16 @@ a {
         border-right: 3px solid #787c7b;
         width: 8px;
         height: 8px;
-        -webkit-transform: rotate(135deg);
-        transform: rotate(135deg);
-      }
-      .main-category__title.open::before {
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
+      }
+      .main-category__title.open::before {
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
         top: 38%;
       }
       .js-accordion-content {
+        display: none;
         .sub-category {
           margin-left: 20px;
           padding-bottom: 16px;
