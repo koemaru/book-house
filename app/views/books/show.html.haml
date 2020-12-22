@@ -5,20 +5,20 @@
   .show-main
     .book-info
       .book-info__img
-        = image_tag '/assets/1minite_talk.jpg'
+        = image_tag @selected_book.image.url
       .book-info__detail
         %h1.book-info__detail--title
-          = "1分で話せ"
+          = @selected_book.book_title
         %p.book-info__detail--poster
           = "田中 太郎"
         %P.book-info__detail--post-date
-          = "2020/12/13"
+          = @selected_book.created_at
         %p.book-info__detail--review
           = "★ ★ ★ ★ ★"
         %p.book-info__detail--like
           = "♡ 28"
     .post-info
       .post-info__title
-        = "話し方に悩んでる方にはオススメの本です!書店で見かけたら是非手に取ってください"
+        = @selected_book.article_title
       .post-info__article
-        = "ヤフーアカデミア学長にしてグロービス講師 孫社長にも一目置かれた伝説の「伝え方」！ ・プレゼンに限らず、人前に立って話をする、指示をする、伝える、ということが苦手な方はいるでしょう。著者の伊藤氏は、そのプレゼンを聞いたソフトバンクの孫社長から認められるほどの技術の持ち主であり、今はグロービ..."
+        = @selected_book.article

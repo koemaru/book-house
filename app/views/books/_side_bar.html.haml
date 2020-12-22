@@ -2,42 +2,65 @@
   .main-category__container
     .main-category__section
       .main-category__title.js-accordion-title
-        %p 仕事
+        %p
+          = @categories[0].name
       .js-accordion-content
         .sub-category
-          .sub-category__title
-            = link_to "IT"
-          .sub-category__title
-            = link_to "金融"
-          .sub-category__title
-            = link_to "自己啓発"
+          - @categories_1.each do |category_1|
+            .sub-category__title
+              = link_to do
+                = category_1.name
       .main-category__title.js-accordion-title
-        %p 趣味
+        %p
+          = @categories[1].name
       .js-accordion-content
         .sub-category
-          .sub-category__title
-            = link_to "スポーツ"
-          .sub-category__title
-            = link_to "釣り"
-          .sub-category__title
-            = link_to "キャンプ"
+          - @categories_2.each do |category_2|
+            .sub-category__title
+              = link_to do
+                = category_2.name
       .main-category__title.js-accordion-title
-        %p くらし
+        %p
+          = @categories[2].name
       .js-accordion-content
         .sub-category
-          .sub-category__title
-            = link_to "家計"
-          .sub-category__title
-            = link_to "日用品"
-          .sub-category__title
-            = link_to "雑貨"
+          - @categories_3.each do |category_3|
+            .sub-category__title
+              = link_to do
+                = category_3.name
       .main-category__title.js-accordion-title
-        %p 小説
+        %p
+          = @categories[3].name
       .js-accordion-content
         .sub-category
-          .sub-category__title
-            = link_to "文学"
-          .sub-category__title
-            = link_to "歴史"
-          .sub-category__title
-            = link_to "フィクション"
+          - @categories_4.each do |category_4|
+            .sub-category__title
+              = link_to do
+                = category_4.name
+      .main-category__title.js-accordion-title
+        %p
+          = @categories[4].name
+      .js-accordion-content
+        .sub-category
+          - @categories_5.each do |category_5|
+            .sub-category__title
+              = link_to do
+                = category_5.name
+      .main-category__title.js-accordion-title
+        %p
+          = @categories[5].name
+      .js-accordion-content
+        .sub-category
+          - @categories_6.each do |category_6|
+            .sub-category__title
+              = link_to do
+                = category_6.name
+      .main-category__title.js-accordion-title
+        %p
+          = @categories[6].name
+      .js-accordion-content
+        .sub-category
+          - @categories_7.each do |category_7|
+            .sub-category__title
+              = link_to do
+                = category_7.name

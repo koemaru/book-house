@@ -42,7 +42,7 @@ Things you may want to cover:
 |Column       |Type       |Options                          |
 |-------------|-----------|---------------------------------|
 |user_id      |references |null: false, foreign_key: true   |
-|category_id  |references |null: false, foreign_key: true   |
+|category_id  |references |null: false,                     |
 |title        |string     |null: false                      |
 |article      |text       |null: false                      |
 |image        |string     |null: false                      |
