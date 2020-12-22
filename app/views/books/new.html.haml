@@ -18,9 +18,9 @@
           = f.file_field :image, class: 'book-container__left__btn'
         .book-container__right
           .book-container__right__title
-            = f.label :title, "タイトル", class: 'book-container__right__title--label'
+            = f.label :book_title, "タイトル", class: 'book-container__right__title--label'
           .book-container__right__title
-            = f.text_field :title, placeholder: 'タイトル', class: 'book-container__right__title--input'
+            = f.text_field :book_title, placeholder: 'タイトル', class: 'book-container__right__title--input'
           .book-container__right__category
             = f.label :category, "カテゴリー", class: 'book-container__right__category--label'
           -# .book-container__right__category--form
@@ -33,7 +33,7 @@
               = "★ ★ ★ ★ ★"
       .book-article
         .book-article__title
-          = f.text_area :article, placeholder: '記事タイトル', class: 'book-article__title--input'
+          = f.text_area :article_title, placeholder: '記事タイトル', class: 'book-article__title--input'
         .book-article__content
           = f.text_area :article, placeholder: 'こちらに読んだ本の内容や感想を記録しましょう', class: 'book-article__content--input'
       .book-register

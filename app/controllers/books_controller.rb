@@ -27,6 +27,8 @@ class BooksController < ApplicationController
   end
 
   def show
+    # binding.pry
+    @selected_book = Book.find(params[:id])
   end
 
   # 親カテゴリーが選択された後に動くアクション
@@ -42,7 +44,7 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :article, :image, :category_id)
+    params.require(:book).permit(:book_title, :article, :image, :category_id, :article_title)
   end
 
 end

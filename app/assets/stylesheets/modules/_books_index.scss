@@ -171,6 +171,10 @@ a {
                 font-size: 20px;
                 font-weight: 700;
                 margin-bottom: 8px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
               }
               &__article {
                 // background-color: peru;
