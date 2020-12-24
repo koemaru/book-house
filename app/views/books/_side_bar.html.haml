@@ -8,7 +8,7 @@
         .sub-category
           - @categories_1.each do |category_1|
             .sub-category__title
-              = link_to do
+              = link_to category_path(category_1.id) do
                 = category_1.name
       .main-category__title.js-accordion-title
         %p
@@ -17,7 +17,7 @@
         .sub-category
           - @categories_2.each do |category_2|
             .sub-category__title
-              = link_to do
+              = link_to  category_path(category_2.id) do
                 = category_2.name
       .main-category__title.js-accordion-title
         %p
@@ -26,7 +26,7 @@
         .sub-category
           - @categories_3.each do |category_3|
             .sub-category__title
-              = link_to do
+              = link_to  category_path(category_3.id) do
                 = category_3.name
       .main-category__title.js-accordion-title
         %p
@@ -35,7 +35,7 @@
         .sub-category
           - @categories_4.each do |category_4|
             .sub-category__title
-              = link_to do
+              = link_to category_path(category_4.id) do
                 = category_4.name
       .main-category__title.js-accordion-title
         %p
@@ -44,7 +44,7 @@
         .sub-category
           - @categories_5.each do |category_5|
             .sub-category__title
-              = link_to do
+              = link_to category_path(category_5.id) do
                 = category_5.name
       .main-category__title.js-accordion-title
         %p
@@ -53,7 +53,7 @@
         .sub-category
           - @categories_6.each do |category_6|
             .sub-category__title
-              = link_to do
+              = link_to category_path(category_6.id) do
                 = category_6.name
       .main-category__title.js-accordion-title
         %p
@@ -62,5 +62,5 @@
         .sub-category
           - @categories_7.each do |category_7|
             .sub-category__title
-              = link_to do
+              = link_to category_path(category_7.id) do
                 = category_7.name

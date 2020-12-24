@@ -5,4 +5,6 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
     end
   end
+
+  resources :categories, only: [:show]
 end
