@@ -10,7 +10,7 @@ $(function(){
   function appendChildrenBox(insertHTML) {
     let childrenSelectHtml = '';
     childrenSelectHtml = `<div class="js-category-form" id="child-wrapper">
-    <select class="book-container__right__category--input" id="child-category" name="product[category_id]"><option value="">選択してください</option>
+    <select class="book-container__right__category--input" id="child-category" name="book[category_id]"><option value="">選択してください</option>
     ${insertHTML}
     </select>
     </div>`;

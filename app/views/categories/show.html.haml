@@ -1,0 +1,27 @@
+.header-wrapper
+  = render "books/header"
+.content-wrapper
+  = render "books/side_bar"
+  .main-wrapper
+    .main-header
+      %p.breadcrumb
+        = @category.parent.name
+        >
+        = @category.name
+      %h1.mani-category
+        = @category.name
+    .main-content
+      .book-list
+        %ul
+          - @category_books.each do |book|
+            = link_to book_path(book) do
+              %li
+                .book-img
+                  = image_tag book.image.url
+                .book-description
+                  .book-description__title
+                    = book.article_title
+                  .book-description__article
+                    = book.article
+                  .book-description__like
+                    = "♡ 28"
