@@ -39,14 +39,15 @@ Things you may want to cover:
 - has_many :likes
 
 ## booksテーブル
-|Column       |Type       |Options                          |
-|-------------|-----------|---------------------------------|
-|user_id      |references |null: false, foreign_key: true   |
-|category_id  |references |null: false,                     |
-|title        |string     |null: false                      |
-|article      |text       |null: false                      |
-|image        |string     |null: false                      |
-|likes_count  |integer    |                                 |
+|Column           |Type       |Options                          |
+|-----------------|-----------|---------------------------------|
+|user_id          |references |null: false, foreign_key: true   |
+|category_id      |integer    |null: false                      |
+|book_title       |string     |null: false                      |
+|article          |text       |null: false                      |
+|image            |string     |null: false                      |
+|article_title    |string     |null: false                      |
+|likes_count      |integer    |                                 |
 ### Association
 - belongs_to :user
 - belongs_to :category
@@ -78,7 +79,7 @@ Things you may want to cover:
 |Column       |Type         |Options                          |
 |-------------|-------------|---------------------------------|
 |name         |string       |null: false, unique: true        |
-|ancestry     |string       |                                 |
+|ancestry     |string       |add_index: true                  |
 - has_many :books
 - has_ancestry
 
