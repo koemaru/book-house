@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   
+  has_many :books
+  has_many :likes
+
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.name = "guest"
