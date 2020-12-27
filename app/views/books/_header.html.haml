@@ -9,8 +9,15 @@
       = link_to "おすすめ"
     %li.header__navi__menu--list
       = link_to "コラム"
-  %ul.header__navi__user
-    %li.header__navi__user--info
-      = link_to "ログイン", new_user_session_path
-    %li.header__navi__user--info
-      = link_to "新規登録", new_user_registration_path
+  - if user_signed_in?
+    %ul.header__navi__user
+      %li
+        = link_to "ログアウト", destroy_user_session_path, { method: :delete, data: {confirm: "ログアウトしますか？"}, class: "header__navi__user--info"}
+      %li
+        = link_to "投稿する", new_book_path, class: "header__navi__user--info"
+  - else
+    %ul.header__navi__user
+      %li
+        = link_to "ログイン", new_user_session_path, class: "header__navi__user--info"
+      %li
+        = link_to "新規登録", new_user_registration_path, class: "header__navi__user--info"
