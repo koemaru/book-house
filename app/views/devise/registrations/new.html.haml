@@ -1,0 +1,46 @@
+.devise-header
+  .devise-header__main
+    %h1.devise-header__main--title
+      =link_to "book house", root_path
+    .devise-header__main--login
+      = link_to "ログインはこちら", new_user_session_path
+.signup-wrapper
+  .signup-introduction
+    %h2.signup-introduction__title
+      = "book-houseにようこそ！"
+    .signup-introduction__description
+      %p
+        = "book-houseは本のレビューを閲覧・投稿できる場です。"
+      %p
+        = "気になる本のレビューを見たり、読んだ本の感想を投稿して楽しめます。読んだ本の管理もできます。"
+      %p
+        = "読書を通して知識の輪を広げていきましょう。"
+  .signup-body
+    .signup-body__area
+      .signup-form
+        %p.signup-form__title
+          = "book-houseに"
+          %br/
+          = "登録する"
+        .signup-form__box
+          = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+            = render "devise/shared/error_messages", resource: resource
+            .feild
+              = f.label :name, "お名前（book-houseで表示される名前です）", class: "field--label"
+              %br/
+              = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "book-houseさん", class: "field--input"
+            .feild
+              = f.label :email, "メールアドレス", class: "field--label"
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "book-house@mail.com", class: "field--input"
+            .field
+              = f.label :password, "パスワード", class: "field--label"
+              %p
+                = "6文字以上の半角英数"
+              = f.password_field :password, autocomplete: "new-password", class: "field--input"
+            .field
+              = f.label :password_confirmation, "パスワード確認", class: "field--label"
+              %br/
+              = f.password_field :password_confirmation, autocomplete: "new-password", class: "field--input"
+            .actions
+              = f.submit "登録する", class: "actions--btn"

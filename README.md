@@ -27,11 +27,9 @@ Things you may want to cover:
 ## usersテーブル
 |Column       |Type   |Options                      |
 |-------------|-------|-----------------------------|
-|nickname     |string |null: false                  |
+|name         |string |null: false, unique: true    |
 |email        |string |null: false, unique: true    |
 |password     |string |null: false                  |
-|last_name    |string |null: false                  |
-|first_name   |string |null: false                  |
 ### Association
 - has_many :columns
 - has_many :books
