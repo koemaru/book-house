@@ -1,6 +1,9 @@
 .header__main
   %h1.header__main--title
     =link_to "book house", root_path
+  - unless user_signed_in?
+    .guest
+      = link_to "ゲストログイン", users_guest_sign_in_path, method: :post, class: "guest--btn"
 .header__navi
   %ul.header__navi__menu
     %li.header__navi__menu--list

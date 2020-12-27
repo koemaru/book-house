@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :get_category_children ]
+  before_action :authenticate_user!, except: [:index, :show, :get_category_children, :new_guest ]
   before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
 
   def index

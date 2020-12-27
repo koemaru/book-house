@@ -17,10 +17,29 @@ a {
     // background-color: bisque;
     height: 50px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
     &--title {
       font-size: 20px;
       font-weight: 900;
       line-height: 50px;
+    }
+    .guest {
+      display: flex;
+      align-items: center;
+      &--btn {
+        border: 2px solid #757eff;
+        align-items: center;
+        background-color: #757eff;
+        border-radius: 6px;
+        padding: 10px 20px;
+        margin: 5px;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      a {
+        color: #fff;
+      }
     }
   }
   .header__navi {
