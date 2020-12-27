@@ -39,7 +39,7 @@ Things you may want to cover:
 ## booksテーブル
 |Column           |Type       |Options                          |
 |-----------------|-----------|---------------------------------|
-|user_id          |references |null: false, foreign_key: true   |
+|user_id          |integer    |null: false                      |
 |category_id      |integer    |null: false                      |
 |book_title       |string     |null: false                      |
 |article          |text       |null: false                      |
