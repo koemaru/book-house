@@ -15,10 +15,14 @@
           = @selected_book.created_at
         %p.book-info__detail--review
           = "★ ★ ★ ★ ★"
-        %p.book-info__detail--like
-          = "♡ 28"
+        .like-btn
+          .like-box
+            = render partial: "like_ajax", locals: { book: @selected_book }
     .post-info
       .post-info__title
         = @selected_book.article_title
       .post-info__article
         = @selected_book.article
+      .like-btn
+        .like-box
+          = render partial: "like_ajax", locals: { book: @selected_book }

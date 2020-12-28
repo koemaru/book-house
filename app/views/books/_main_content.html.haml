@@ -16,5 +16,7 @@
                   = book.article_title
                 .book-description__article
                   = book.article
-                .book-description__like
-                  = "♡ 28"
+                .like-btn
+                  .like-box
+                    = icon('fas', 'heart')
+                    = book.likes.count

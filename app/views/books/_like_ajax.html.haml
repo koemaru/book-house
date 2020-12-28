@@ -1,0 +1,13 @@
+- if user_signed_in?
+  - if current_user.already_liked?(book)
+    = link_to book_likes_path(book), method: :delete, remote: true do
+      .like-box--color
+        = icon('fas', 'heart')
+  - else
+    = link_to book_likes_path(book), method: :post, remote: true do
+      .like-box--color
+        = icon('far', 'heart')
+  = book.likes.count
+- else
+  = icon('fas', 'heart')
+  = book.likes.count

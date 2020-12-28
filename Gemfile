@@ -71,3 +71,4 @@ end
 gem 'fog-aws'
 gem 'ancestry'
 gem 'devise'
+gem "font-awesome-sass"
