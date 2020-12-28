@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
   root "books#index"
   resources :books, only: [:index, :show, :new, :create] do
+    resource :likes, only: [:create, :destroy]
     collection do
       get 'get_category_children', defaults: { format: 'json' }
     end

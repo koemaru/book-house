@@ -1,6 +1,5 @@
 .show-wrapper {
   height: 100vh;
-  // background-color: beige;
   .show-main {
     width: 620px;
     margin: 80px auto 0;
@@ -17,7 +16,6 @@
         }
       }
       &__detail {
-        // background-color: cadetblue;
         width: 300px;
         &--title {
           font-size: 24px;
@@ -35,21 +33,16 @@
           font-size: 14px;
           padding-bottom: 20px;
         }
-        &--like {
-          font-size: 14px;
-        }
       }
     }
     .post-info {
       &__title {
-        // background-color: coral;
         font-size: 28px;
         font-weight: 900;
         letter-spacing: .08em;
         padding: 10px 0;
       }
       &__article {
-        // background-color: cornflowerblue;
         font-size: 18px;
         line-height: 60px;
         letter-spacing: .08em;
@@ -59,4 +52,15 @@
     }
   }
 }
-  
+
+.like-btn {
+  .like-box {
+    font-size: 14px;
+    color: #e54747; 
+    &--color {
+      font-size: 14px;
+      color: #e54747;
+      display: inline;
+    }
+  }
+}
