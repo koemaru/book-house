@@ -13,8 +13,18 @@
           = "田中 太郎"
         %P.book-info__detail--post-date
           = @selected_book.created_at
-        %p.book-info__detail--review
-          = "★ ★ ★ ★ ★"
+        %p.book-info__detail--review{ id: "star-evaluation-#{@selected_book.id}" }
+          :javascript
+            $('#star-evaluation-#{@selected_book.id}').raty({
+              starOff: "#{asset_path('star-off.png')}",
+              starOn: "#{asset_path('star-on.png')}",
+              starHalf: "#{asset_path('star-half.png')}",
+              half: true,
+              readOnly: true,
+              score: "#{@selected_book.evaluation}",
+            });
+        %p.book-info__detail--point
+          = @selected_book.evaluation
         .like-btn
           .like-box
             = render partial: "like_ajax", locals: { book: @selected_book }
