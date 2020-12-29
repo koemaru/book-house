@@ -23,14 +23,21 @@
             = f.text_field :book_title, placeholder: 'タイトル', class: 'book-container__right__title--input'
           .book-container__right__category
             = f.label :category, "カテゴリー", class: 'book-container__right__category--label'
-          -# .book-container__right__category--form
           .book-container__right__category.js-category-form
             = f.collection_select :category_id, Category.roots, :id, :name, {prompt: '選択してください'}, {class: 'book-container__right__category--input', id: 'parent-category'}
           .book-container__right__review
             .book-container__right__review--title
               = "評価"
-            .book-container__right__review--star
-              = "★ ★ ★ ★ ★"
+            .evaluation{ id: :star }
+              = f.hidden_field :evaluation, id: :review_star
+              :javascript
+                $('#star').raty({
+                  starOff: "#{asset_path('star-off.png')}",
+                  starOn: "#{asset_path('star-on.png')}",
+                  starHalf: "#{asset_path('star-half.png')}",
+                  scoreName: 'book[evaluation]',
+                  half: true,
+                });
       .book-article
         .book-article__title
           = f.text_area :article_title, placeholder: '記事タイトル', class: 'book-article__title--input'
