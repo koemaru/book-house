@@ -28,8 +28,9 @@ class BooksController < ApplicationController
   end
 
   def show
-    # binding.pry
     @selected_book = Book.find(params[:id])
+    @user = @selected_book.user_id
+    @recent_articles = Book.where(user_id: @selected_book.user_id).order('created_at DESC').limit(3)
   end
 
   # 親カテゴリーが選択された後に動くアクション

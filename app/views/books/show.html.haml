@@ -10,9 +10,9 @@
         %h1.book-info__detail--title
           = @selected_book.book_title
         %p.book-info__detail--poster
-          = "田中 太郎"
+          = @selected_book.user.name
         %P.book-info__detail--post-date
-          = @selected_book.created_at
+          = @selected_book.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分")
         %p.book-info__detail--review{ id: "star-evaluation-#{@selected_book.id}" }
           :javascript
             $('#star-evaluation-#{@selected_book.id}').raty({
@@ -36,3 +36,23 @@
       .like-btn
         .like-box
           = render partial: "like_ajax", locals: { book: @selected_book }
+    .recent
+      .poster-name
+        = "#{@selected_book.user.name}さんの最近の記事"
+      .recent-articles
+        %ul
+          - @recent_articles.each do |article|
+            .article-box
+              .article-container
+                = link_to book_path(article) do
+                  %li
+                    .article-info
+                      .article-data
+                        %p.article-data--title
+                          = article.book_title
+                        .article-data--like
+                          = icon('fas', 'heart')
+                          = article.likes.count
+                        .article-data--name
+                          = article.user.name
+                      = image_tag article.image.url
