@@ -1,0 +1,49 @@
+.header-wrapper
+  = render "header"
+
+.new-wrapper
+  .new-main
+    = form_with model: @book, local: true do |f|
+      .book-container
+        = f.label :image, class: 'book-container__left' do
+          .prev-contents
+            - if @book.image.present?
+              .prev-content
+                = image_tag @book.image.url, alt: "preview", class: "prev-image"
+            - else
+              = image_tag '/assets/icon_camera.png', class: 'book-container__left__icon'
+              .book-container__left__comment
+                %pクリックして<br>
+                %pファイルをアップロード
+          = f.file_field :image, class: 'book-container__left__btn'
+        .book-container__right
+          .book-container__right__title
+            = f.label :book_title, "タイトル", class: 'book-container__right__title--label'
+          .book-container__right__title
+            = f.text_field :book_title, placeholder: 'タイトル', class: 'book-container__right__title--input'
+          .book-container__right__category
+            = f.label :category, "カテゴリー", class: 'book-container__right__category--label'
+          .book-container__right__category.js-category-form
+            = f.collection_select :category_id, @book_parent, :id, :name, {prompt: '選択してください',selected: Book.find(params[:id]).category.parent.id}, {class: 'book-container__right__category--input', id: 'parent-category'}
+          #child-wrapper
+            = f.collection_select :category_id, @book_children_category, :id, :name, {selected: Book.find(params[:id]).category.id}, {class: 'book-container__right__category--input'}
+          .book-container__right__review
+            .book-container__right__review--title
+              = "評価"
+            .evaluation{ id: :star }
+              = f.hidden_field :evaluation, id: :review_star
+              :javascript
+                $('#star').raty({
+                  starOff: "#{asset_path('star-off.png')}",
+                  starOn: "#{asset_path('star-on.png')}",
+                  starHalf: "#{asset_path('star-half.png')}",
+                  scoreName: 'book[evaluation]',
+                  half: true,
+                });
+      .book-article
+        .book-article__title
+          = f.text_area :article_title, placeholder: '記事タイトル', class: 'book-article__title--input'
+        .book-article__content
+          = f.text_area :article, placeholder: 'こちらに読んだ本の内容や感想を記録しましょう', class: 'book-article__content--input'
+      .book-register
+        = f.submit "更新する", class: 'book-register__btn'

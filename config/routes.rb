@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
   root "books#index"
-  resources :books, only: [:index, :show, :new, :create] do
+  resources :books, only: [:index, :show, :new, :create, :edit, :update] do
     resource :likes, only: [:create, :destroy]
     collection do
       get 'get_category_children', defaults: { format: 'json' }

@@ -33,6 +33,19 @@ class BooksController < ApplicationController
     @recent_articles = Book.where(user_id: @selected_book.user_id).order('created_at DESC').limit(3)
   end
 
+  def edit
+    @book = Book.find(params[:id])
+    @book_parent = Category.roots
+    @book_root_category = @book.category.root
+    @book_children_category = @book_root_category.children
+  end
+
+  def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to book_path(book)
+  end
+
   # 親カテゴリーが選択された後に動くアクション
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
