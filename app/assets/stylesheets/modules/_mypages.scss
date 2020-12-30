@@ -1,0 +1,133 @@
+@mixin mybook() {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  &--title {
+    font-size: 20px;
+    color: #797979;
+    font-weight: bold;
+    letter-spacing: .08em;
+  }
+  &--number {
+    font-size: 20px;
+    color: #797979;
+    font-weight: bold;
+    letter-spacing: .08em;
+  }
+}
+
+.mypage-wrapper {
+  height: 100vh;
+  .mypage-main {
+    width: 820px;
+    margin: 80px auto 0;
+    display: flex;
+    .mypage-left {
+      height: 300px;
+      width: 50%;
+      &--name {
+        font-size: 22px;
+        color: #222;
+        font-weight: bold;
+        padding: 15px 10px;
+        letter-spacing: .08em;
+      }
+      &__like {
+        @include mybook();
+        &--count {
+          display: flex;
+          .like-btn {
+            font-size: 20px;
+            color: #e54747;
+            margin-right: 10px;
+          }
+          .like-count {
+            font-size: 20px;
+            color: #797979;
+            font-weight: bold;
+            letter-spacing: .08em;
+          }
+        }
+      }
+      .total {
+        @include mybook();
+      }
+    }
+    .mypage-right {
+      height: 300px;
+      width: 50%;
+      .month {
+        margin-top: 123px;
+        @include mybook();
+      }
+      .year {
+        @include mybook();
+      }
+    }
+  }
+  .mypage-history {
+    height: 600px;
+    width: 620px;
+    margin: 0 auto;
+    &__title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #222;
+      text-align: center;
+      padding: 40px 0;
+    }
+    &__list {
+      ul {
+        .book-box {
+          display: flex;
+          justify-content: space-between;
+          .book-container {
+            li {
+              .book-info{
+                display: flex;
+                margin-bottom: 30px;
+                img {
+                    height: 80px;
+                    width: 60px;
+                    margin-right: 30px;
+                }
+                .book-data {
+                  padding: auto 0; 
+                  &--title {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: #797979;
+                    margin: 10px 0 5px 0;
+                  }
+                  &--date {
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #797979;
+                  }
+                }
+              }
+            }
+          }
+          .book-edit {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            &__edit {
+              margin-right: 30px;
+              a {
+                font-size: 18px;
+                color: #797979;
+              }
+            }
+            &__delete {
+              a {
+                font-size: 18px;
+                color: #797979;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

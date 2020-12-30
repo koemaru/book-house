@@ -1,0 +1,54 @@
+.header-wrapper
+  = render "books/header"
+
+.mypage-wrapper
+  .mypage-main
+    .mypage-left
+      %p.mypage-left--name
+        = @user.name
+      .mypage-left__like
+        .mypage-left__like--title
+          = "いいね獲得総数"
+        .mypage-left__like--count
+          .like-btn
+            = icon('fas', 'heart')
+          .like-count
+            = @like_count
+      .total
+        %p.total--title
+          = "これまで読んだ本"
+        %p.total--number
+          = "#{@mybook_total}冊"
+    .mypage-right
+      .month
+        %p.month--title
+          = "過去1ヶ月"
+        %p.month--number
+          = "#{@mybook_month}冊"
+      .year
+        %p.year--title
+          = "過去1年"
+        %p.year--number
+          = "#{@mybook_year}冊"
+  .mypage-history
+    %h2.mypage-history__title
+      = "投稿履歴"
+    .mypage-history__list
+      %ul
+        - @my_books.each do |book|
+          .book-box
+            .book-container
+              = link_to book_path(book) do
+                %li
+                  .book-info
+                    = image_tag book.image.url
+                    .book-data
+                      .book-data--title
+                        = book.book_title
+                      .book-data--date
+                        = "投稿日 #{book.created_at.strftime("%Y年 %m月 %d日")}"
+            .book-edit
+              %p.book-edit__edit
+                = link_to "編集", "#"
+              %p.book-edit__delete
+                = link_to "削除", "#"
