@@ -51,4 +51,5 @@
               %p.book-edit__edit
                 = link_to "編集", "#"
               %p.book-edit__delete
-                = link_to "削除", "#"
+                = link_to mypage_path(book.id), method: :delete, data: {confirm: "削除しますか？"} do
+                  = "削除"
