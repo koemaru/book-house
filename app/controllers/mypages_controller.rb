@@ -12,4 +12,10 @@ class MypagesController < ApplicationController
     @like_count = Like.where(user_id: current_user.id).count
   end
 
+  def destroy
+    delete_book = Book.find(params[:id])
+    delete_book.destroy
+    redirect_to mypages_path
+  end
+
 end
