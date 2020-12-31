@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :set_category, only: [:new, :edit, :create, :update, :destroy]
 
   def index
-    @new_books = Book.order('created_at DESC')
+    @new_books = Book.order('created_at DESC').page(params[:page]).per(8)
     @categories = Category.where(ancestry: nil)
     @categories_1 = Category.where(ancestry: 1)
     @categories_2 = Category.where(ancestry: 2)
