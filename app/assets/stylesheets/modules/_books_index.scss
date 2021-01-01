@@ -149,7 +149,7 @@ nav.pagination {
       margin-bottom: 8px;
       color: #787c7b;
     }
-    .mani-category {
+    .main-category {
       font-size: 24px;
       font-weight: 700;
       letter-spacing: .04em;
@@ -188,7 +188,7 @@ nav.pagination {
                 overflow: hidden;
               }
               &__article {
-                font-size: 14px;
+                font-size: 13px;
                 letter-spacing: .04em;
                 color: #787c7b;
                 word-break: break-all;
@@ -204,6 +204,21 @@ nav.pagination {
                 bottom: 0;
                 font-size: 14px;
                 color: #e54747; 
+              }
+              .star-box {
+                display: flex;
+                float: right;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                img {
+                  height: 20px;
+                  width: 20px;
+                }
+                p {
+                  font-size: 16px;
+                  margin-left: 10px;
+                }
               }
             }
           }

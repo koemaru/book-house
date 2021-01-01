@@ -1,0 +1,41 @@
+.header-wrapper
+  = render "books/header"
+.content-wrapper
+  = render "books/side_bar"
+
+  .main-wrapper
+    .main-header
+      %p.breadcrumb
+      %h1.main-category
+        = "おすすめの記事（星の数が多い順）"
+    .main-content
+      .book-list
+        %ul
+          - @recommended_books.each do |book|
+            = link_to book_path(book) do
+              %li
+                .book-img
+                  = image_tag book.image.url
+                .book-description
+                  .book-description__title
+                    = book.article_title
+                  .book-description__article
+                    = book.article
+                  .like-btn
+                    .like-box
+                      = icon('fas', 'heart')
+                      = book.likes.count
+                  .star-box
+                    %p.book-info__detail--review{ id: "star-evaluation-#{book.id}" }
+                      :javascript
+                        $('#star-evaluation-#{book.id}').raty({
+                          starOff: "#{asset_path('star-off.png')}",
+                          starOn: "#{asset_path('star-on.png')}",
+                          starHalf: "#{asset_path('star-half.png')}",
+                          half: true,
+                          readOnly: true,
+                          score: "#{book.evaluation}",
+                        });
+                    %p.book-info__detail--point
+                      = book.evaluation
+        = paginate @recommended_books
