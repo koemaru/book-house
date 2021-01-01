@@ -11,7 +11,7 @@
               .prev-content
                 = image_tag @book.image.url, alt: "preview", class: "prev-image"
             - else
-              = image_tag '/assets/icon_camera.png', class: 'book-container__left__icon'
+              = image_tag asset_path('icon_camera.png'), class: 'book-container__left__icon'
               .book-container__left__comment
                 %pクリックして<br>
                 %pファイルをアップロード
@@ -42,6 +42,6 @@
         .book-article__title
           = f.text_area :article_title, placeholder: '記事タイトル', class: 'book-article__title--input'
         .book-article__content
-          = f.text_area :article, placeholder: 'こちらに読んだ本の内容や感想を記録しましょう', class: 'book-article__content--input'
+          = f.text_area :article, placeholder: 'こちらに読んだ本の内容や感想を記録しましょう', class: 'book-article__content--input auto-resize'
       .book-register
         = f.submit "投稿する", class: 'book-register__btn'
