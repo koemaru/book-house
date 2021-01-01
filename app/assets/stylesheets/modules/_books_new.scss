@@ -153,5 +153,19 @@ select::-ms-expand {
         padding: 8px 0;
       }
     }
+    .book-cancel {
+      margin-top: 30px;
+      text-align: center;
+      &__btn {
+        background-color: #797979;
+        color: #fff;
+        display: inline-block;
+        width: 300px;
+        padding: 8px 0;
+        font-size: 14px;
+        cursor: pointer;
+        border: none;
+      }
+    }
   }
 }
