@@ -44,6 +44,9 @@
         .book-article__title
           = f.text_area :article_title, placeholder: '記事タイトル', class: 'book-article__title--input'
         .book-article__content
-          = f.text_area :article, placeholder: 'こちらに読んだ本の内容や感想を記録しましょう', class: 'book-article__content--input'
+          = f.text_area :article, rows: 4, placeholder: 'こちらに読んだ本の内容や感想を記録しましょう', class: 'book-article__content--input auto-resize'
       .book-register
         = f.submit "更新する", class: 'book-register__btn'
+      .book-cancel
+        = link_to mypages_path, class: 'book-cancel__btn' do
+          = "キャンセル"
