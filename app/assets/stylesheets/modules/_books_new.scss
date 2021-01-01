@@ -18,11 +18,10 @@ select::-ms-expand {
 
 .new-wrapper {
   height: 100vh;
-  // background-color: beige;
   .new-main {
-    // background-color: aquamarine;
     width: 620px;
     margin: 80px auto 0;
+    padding-bottom: 150px;
     .book-container {
       display: flex;
       padding-bottom: 60px;
@@ -103,7 +102,6 @@ select::-ms-expand {
           }
         }
         &__review {
-          // background-color: chartreuse;
           position: absolute;
           bottom: 10px;
             &--title {
@@ -117,7 +115,6 @@ select::-ms-expand {
       }
     }
     .book-article {
-      // background-color: burlywood;
       &__title {
         &--input {
           width: 100%;
