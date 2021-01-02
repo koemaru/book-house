@@ -1,5 +1,7 @@
 # book-house
-<img width="1440" alt="スクリーンショット 2021-01-02 19 36 30" src="https://user-images.githubusercontent.com/65227841/103455642-1c187300-4d32-11eb-8c21-ad92f0ed33b2.png">
+<img width="1428" alt="スクリーンショット 2021-01-02 19 49 42" src="https://user-images.githubusercontent.com/65227841/103455822-b9c07200-4d33-11eb-9132-32f955ad81d3.png">
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
