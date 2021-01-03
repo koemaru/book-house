@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :mypages, only: [:index, :destroy]
   resources :recommendations, only: [:index]
+  resources :users, only: [:edit, :update]
 end

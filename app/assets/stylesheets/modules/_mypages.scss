@@ -25,12 +25,25 @@
     .mypage-left {
       height: 300px;
       width: 50%;
-      &--name {
-        font-size: 22px;
-        color: #222;
-        font-weight: bold;
-        padding: 15px 10px;
-        letter-spacing: .08em;
+      &__account {
+        display: flex;
+        justify-content: space-between;
+        &--name{
+          font-size: 22px;
+          color: #222;
+          font-weight: bold;
+          padding: 15px 10px;
+          letter-spacing: .08em;
+        }
+        &--edit {
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          padding-right: 30px;
+          a {
+            color: #797979;
+          }
+        }
       }
       &__like {
         @include mybook();

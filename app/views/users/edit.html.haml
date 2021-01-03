@@ -1,0 +1,20 @@
+.account-body
+  .account-body__area
+    .account-form
+      %p.account-form__title
+        = "アカウント編集"
+      .account-form__box
+        = form_for(current_user) do |f|
+          .feild
+            = f.label :name, "お名前（book-houseで表示される名前です）", class: "field--label"
+            %br/
+            = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "book-houseさん", class: "field--input"
+          .feild
+            = f.label :email, "メールアドレス", class: "field--label"
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "book-house@mail.com", class: "field--input"
+          .actions
+            = f.submit "更新する", class: "actions--btn"
+          .cancel
+            = link_to mypages_path, class: 'cancel--btn' do
+              = "キャンセル"
