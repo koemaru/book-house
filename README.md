@@ -16,7 +16,8 @@ http://www.book-houses.com/
 - カテゴリー(jQuery, Ajax)
 - 画像投稿機能(carrierwave,mini_magick)
   - 投稿画像のプレビュー機能(jQuery)
-- 無限スクロール(kaminari,jscroll)
+- ページネーション(kaminari)
+  - 無限スクロール(jscroll)
 
 # 使用技術
 <p align="center">
@@ -27,7 +28,7 @@ http://www.book-houses.com/
   <a href="https://www.mysql.com/jp/"><img src="https://user-images.githubusercontent.com/65227841/103456982-9222d700-4d3e-11eb-9d17-fc31f7298ddf.png" height="50px;" /></a>
 <a>　</a>
   <a href="https://jquery.com/"><img src="https://user-images.githubusercontent.com/65227841/103457154-fbefb080-4d3f-11eb-869e-b1ea06f16871.png" height="50px;" /></a>
-<a>　</a>
+<a>　</a> <br>
   <a href="https://aws.amazon.com/jp/"><img src="https://user-images.githubusercontent.com/65227841/103457279-255d0c00-4d41-11eb-83fc-8831f3bca063.png" height="50px;" /></a>
 <a>　</a>
   <a href="https://www.nginx.co.jp/"><img src="https://user-images.githubusercontent.com/65227841/103456943-42dca680-4d3e-11eb-9c96-707cf603dd58.png" height="50px;" /></a>
@@ -39,7 +40,7 @@ http://www.book-houses.com/
 <br>
 
 - Ruby 2.6.5
-- Ruby on Rails Rails 6.0.3
+- Ruby on Rails 6.0.3
 - MySQL 5.6.47
 - jQuery 1.12.4
 - AWS
@@ -51,86 +52,8 @@ http://www.book-houses.com/
 - Capistrano 3.14.1
 
 # AWS構成図
-<img width="900" alt="スクリーンショット 2021-01-02 23 03 19" src="https://user-images.githubusercontent.com/65227841/103458786-c2727180-4d4e-11eb-9809-48ea9a87570e.png">
+<img width="900" alt="スクリーンショット 2021-01-02 23 03 19" src="https://user-images.githubusercontent.com/65227841/103474613-074ae680-4de9-11eb-8c2c-faac2a3cc713.png">
 
 # テスト
 - RSpec
   - 単体テスト（ローカル環境にて実施中。完了後デプロイ予定）
-  
-# DB設計
-## usersテーブル
-|Column       |Type   |Options                      |
-|-------------|-------|-----------------------------|
-|name         |string |null: false, unique: true    |
-|email        |string |null: false, unique: true    |
-|password     |string |null: false                  |
-### Association
-- has_many :columns
-- has_many :books
-- has_many :comments
-- has_many :likes
-
-## booksテーブル
-|Column           |Type       |Options                          |
-|-----------------|-----------|---------------------------------|
-|user_id          |integer    |null: false                      |
-|category_id      |integer    |null: false                      |
-|book_title       |string     |null: false                      |
-|article          |text       |null: false                      |
-|image            |string     |null: false                      |
-|article_title    |string     |null: false                      |
-|likes_count      |integer    |                                 |
-### Association
-- belongs_to :user
-- belongs_to :category
-- has_many :comments
-- has_many :likes, dependent: :destroy
-- has_many :liking_users, through: :likes, source: :user
-- has_one :review
-
-## commentsテーブル
-|Column       |Type         |Options                          |
-|-------------|-------------|---------------------------------|
-|user_id      |references   |null: false, foreign_key: true   |
-|book_id      |references   |null: false, foreign_key: true   |
-|comment      |text         |null: false                      |
-### Association
-- belongs_to :user
-- belongs_to :book
-
-## likesテーブル
-|Column       |Type         |Options                          |
-|-------------|-------------|---------------------------------|
-|user_id      |integer      |null: false                      |
-|book_id      |integer      |null: false,                     |
-### Association
-- belongs_to :user
-- belongs_to :book, counter_cache: :likes_count
-
-## categoriesテーブル
-|Column       |Type         |Options                          |
-|-------------|-------------|---------------------------------|
-|name         |string       |null: false, unique: true        |
-|ancestry     |string       |add_index: true                  |
-- has_many :books
-- has_ancestry
-
-## reviewsテーブル
-|Column       |Type         |Options                          |
-|-------------|-------------|---------------------------------|
-|book_id      |references   |null: false, foreign_key: true   |
-|rate         |float        |                                 |
-|score        |string       |null: false                      |
-- has_one :book
-
-## columnsテーブル
-|Column       |Type         |Options                          |
-|-------------|-------------|---------------------------------|
-|user_id      |references   |null: false, foreign_key: true   |
-|title        |string       |null: false                      |
-|column       |text         |null: false                      |
-|image        |string       |null: false                      |
-|genre_id     |integer      |null: false                      |
-### Association
-- belongs_to :user
-- belongs_to_active_hash :genre
