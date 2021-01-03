@@ -4,8 +4,13 @@
 .mypage-wrapper
   .mypage-main
     .mypage-left
-      %p.mypage-left--name
-        = @user.name
+      .mypage-left__account
+        .mypage-left__account--name
+          = @user.name
+        .mypage-left__account--edit
+          - unless current_user.id == 2
+            = link_to edit_user_path(current_user) do
+              = "アカウント編集"
       .mypage-left__like
         .mypage-left__like--title
           = "いいね獲得総数"
@@ -53,3 +58,5 @@
               %p.book-edit__delete
                 = link_to mypage_path(book.id), method: :delete, data: {confirm: "削除しますか？"} do
                   = "削除"
+    .mypage-paginate
+      = paginate @my_books
