@@ -53,3 +53,5 @@
               %p.book-edit__delete
                 = link_to mypage_path(book.id), method: :delete, data: {confirm: "削除しますか？"} do
                   = "削除"
+    .mypage-paginate
+      = paginate @my_books
