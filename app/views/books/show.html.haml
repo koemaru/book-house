@@ -32,7 +32,7 @@
       .post-info__title
         = @selected_book.article_title
       .post-info__article
-        = @selected_book.article
+        = safe_join(@selected_book.article.split("\n"),tag(:br))
       .like-btn
         .like-box
           = render partial: "like_ajax", locals: { book: @selected_book }
