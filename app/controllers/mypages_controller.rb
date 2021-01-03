@@ -8,7 +8,13 @@ class MypagesController < ApplicationController
 
     @my_books = Book.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).per(4)
 
-    @like_count = Like.where(user_id: current_user.id).count
+    @like_books = Book.where(user_id: current_user.id)
+    @like_count = 0
+    @like_books.each do |book|
+      count = 0
+      count = Like.where(book_id: book.id).count
+      @like_count = count + @like_count
+    end
   end
 
   def destroy
